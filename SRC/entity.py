@@ -1,4 +1,5 @@
 import pygame
+import tmx as tmx
 from Animation import *
 import Game_2
 
@@ -11,7 +12,6 @@ class Entity(AnimatedSprite):
         self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()
         self.position = [x, y]
-
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
         self.old_position = self.position.copy()
 
@@ -40,9 +40,15 @@ class Entity(AnimatedSprite):
 
 
 class Player(Entity):
-
     def __init__(self):
         super().__init__("KnightWW", 3010.32, 1431.93)
+        self.rect = self.image.get_rect()
+
+
+class SavedPlayer(Entity):
+
+    def __init__(self):
+        super().__init__("KnightWW", self.position[0], self.position[1])
         self.rect = self.image.get_rect()
 
 

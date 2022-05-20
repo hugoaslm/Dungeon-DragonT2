@@ -1,6 +1,7 @@
 import pygame
 import os
 
+
 class AnimatedSprite(pygame.sprite.Sprite):
 
     def __init__(self, name):
@@ -18,7 +19,7 @@ class AnimatedSprite(pygame.sprite.Sprite):
             "attack_right": self.get_images60(276),
             "attack_up": self.get_images60(342)
         }
-        self.speed = 6
+        self.speed = 3
 
     def change_animation(self, name):
         self.image = self.images[name][self.animation_index]

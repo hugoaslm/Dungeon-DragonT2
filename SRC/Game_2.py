@@ -204,9 +204,9 @@ class Game:
                 self.HF.append(pygame.Rect(0, 0, 3200, 1600))
                 if self.player.feet.collidelist(self.isles) > -1:
                     self.low_health.render(self.screen)
-                    if self.player.feet.collidelist(self.minotaur_isle) > -1:
+                    if self.player.feet.collidelist(self.minotaur_isle) > -1 and not self.player.feet.collidelist(self.healing) > -1 :
                         self.game_over()
-                    if self.player.feet.collidelist(self.dragon) > -1:
+                    if self.player.feet.collidelist(self.dragon) > -1 and not self.player.feet.collidelist(self.healing) > -1 :
                         self.game_over()
 
                 if self.player.feet.collidelist(self.healing) > -1:
@@ -219,7 +219,7 @@ class Game:
                             self.running = True
                         else:
                             self.game_over()
-                    if self.player.feet.collidelist(self.dragon) > -1:
+                    if self.player.feet.collidelist(self.dragon) > -1 and not self.player.feet.collidelist(self.shield) > -1:
                         self.game_over()
 
                 if self.player.feet.collidelist(self.shield) > -1:
