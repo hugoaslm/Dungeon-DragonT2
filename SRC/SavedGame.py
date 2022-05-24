@@ -1,6 +1,11 @@
 import random
 import json
 import os
+import pygame
+from Game_2 import *
+from GUI import *
+from SRC import entity
+from entity import *
 
 
 def backup_game(json_data):
@@ -22,3 +27,5 @@ def clear_backup():
         os.remove("sauvegarde.json")
     except FileNotFoundError:
         pass  # Pas d'erreur si le fichier n'existe pas puisqu'on voulait le supprimer
+
+
